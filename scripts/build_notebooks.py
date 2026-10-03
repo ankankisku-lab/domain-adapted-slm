@@ -11,14 +11,14 @@ from pathlib import Path
 NB_DIR = Path("notebooks")
 
 SETUP = '''
-import getpass, os, subprocess
+import getpass, os, shutil, subprocess
 
-REPO = "ankankisku-lab/domain-adapted-slm"
+REPO = "ankankisku-lab/domain-adapted-slm"                       # public: code and data (no token needed to clone)
+SYNC_REPO = "ankankisku-lab/domain-adapted-slm-private-archive"  # private: work-in-progress results from Colab
 WORKDIR = "/content/domain-adapted-slm"
-PLAIN_URL = f"https://github.com/{REPO}.git"
-token = getpass.getpass("GitHub token: ")
-AUTH_URL = f"https://x-access-token:{token}@github.com/{REPO}.git"  # passed per command, never stored in git config
-os.environ["GIT_PUSH_URL"] = AUTH_URL  # lets long runs push progress (src/colab_sync.py); memory only
+token = getpass.getpass("GitHub token (with access to the private results repo): ")
+SYNC_URL = f"https://x-access-token:{token}@github.com/{SYNC_REPO}.git"  # passed per command, never stored
+os.environ["GIT_PUSH_URL"] = SYNC_URL  # src/colab_sync.py pushes progress here; memory only
 
 def git(*args):
     r = subprocess.run(["git", *args], capture_output=True, text=True)
@@ -27,29 +27,32 @@ def git(*args):
     return r.stdout
 
 if not os.path.exists(WORKDIR):
-    git("clone", "-q", AUTH_URL, WORKDIR)
+    git("clone", "-q", f"https://github.com/{REPO}.git", WORKDIR)
 os.chdir(WORKDIR)
-git("remote", "set-url", "origin", PLAIN_URL)
-git("pull", "-q", "--ff-only", AUTH_URL, "main")
-git("config", "user.name", "ankankisku-lab")
-git("config", "user.email", "239427487+ankankisku-lab@users.noreply.github.com")  # GitHub no-reply address
+git("pull", "-q", "--ff-only", "origin", "main")
 print(git("log", "--oneline", "-3"))
+
+# Bring in results already pushed by earlier sessions, so resumable steps continue instead of starting over.
+shutil.rmtree(".colab_sync", ignore_errors=True)
+git("clone", "-q", "--depth", "1", SYNC_URL, ".colab_sync")
+for sub in ("results", "experiments/runs"):
+    src = os.path.join(".colab_sync", sub)
+    if os.path.isdir(src):
+        shutil.copytree(src, sub, dirs_exist_ok=True)
+for f in ("data/final/pref_pairs.jsonl", "data/manifest/pref_pairs_report.json"):
+    if os.path.exists(os.path.join(".colab_sync", f)):
+        shutil.copy2(os.path.join(".colab_sync", f), f)
+print("restored saved results:", len(os.listdir("results")), "files")
 '''
 
 INSTALL = "%pip install -q -r requirements-colab.txt"
 
 
 def push(files: list[str], subject: str) -> str:
-    adds = ", ".join(json.dumps(f) for f in files)
-    coauthor = json.dumps("Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>")
-    return f'''
-git("add", {adds})
-if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode:
-    git("commit", "-q", "-m", {json.dumps(subject)}, "-m", {coauthor})
-git("pull", "-q", "--rebase", AUTH_URL, "main")  # the repo may have moved on since this session cloned it
-git("push", "-q", AUTH_URL, "HEAD:main")
-print(git("log", "--oneline", "-3"))
-'''
+    return f"""
+from src.colab_sync import sync
+print("saved to the private results repo:", sync({json.dumps(files)}, {json.dumps(subject)}))
+"""
 
 
 def gpu_check(require_t4: bool) -> str:
@@ -79,8 +82,8 @@ same prompt format and scorer every later model (SFT, ORPO) will get.
 **Progress is pushed to GitHub every 8 batches**, so a dropped connection or a recycled Colab machine costs at most a
 few minutes. To resume, run the setup and install cells again, then the full-run cell. It skips everything already done.
 
-**Token:** fine-grained GitHub token, *Contents: Read and write* on `domain-adapted-slm` only. Typed into a hidden
-prompt, kept in memory, never printed or saved.
+**Token:** fine-grained GitHub token, *Contents: Read and write* on the private results repo only. Typed into a
+hidden prompt, kept in memory, never printed or saved.
 """),
         ("code", SETUP),
         ("code", INSTALL),

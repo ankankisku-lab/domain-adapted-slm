@@ -1,7 +1,9 @@
 """Push work-in-progress files from a Colab session to GitHub, so a recycled VM doesn't lose hours of work.
 
-The notebook's setup cell puts the token-bearing URL in the GIT_PUSH_URL environment variable (memory only, never
-written to git config or printed). Without it, syncing is a no-op, so the same scripts run unchanged locally.
+The notebook's setup cell puts the token-bearing URL of a *private results repository* in the GIT_PUSH_URL
+environment variable (memory only, never written to git config or printed). Work-in-progress commits go there, not to
+the public code repository, which only receives curated commits. Without the variable, syncing is a no-op, so the same
+scripts run unchanged locally.
 
 Syncing never runs git in the working checkout. Git operations like `pull --rebase` replace files on disk, and a
 process that keeps a file open (a sampler appending results) would silently go on writing into a detached copy. That
@@ -48,10 +50,10 @@ def _exclusive():
 
 
 def _ensure_clone(url: str) -> None:
-    if (SYNC_DIR / ".git").exists():
-        return
-    shutil.rmtree(SYNC_DIR, ignore_errors=True)
-    _git("clone", "-q", "--depth", "50", url, str(SYNC_DIR), secret=url, cwd=Path("."))
+    if not (SYNC_DIR / ".git").exists():
+        shutil.rmtree(SYNC_DIR, ignore_errors=True)
+        _git("clone", "-q", "--depth", "50", url, str(SYNC_DIR), secret=url, cwd=Path("."))
+    # Set the identity every time: the clone may have been created by the notebook's setup cell.
     for key, value in (("user.name", "ankankisku-lab"),
                        ("user.email", "239427487+ankankisku-lab@users.noreply.github.com")):
         _git("config", key, value, secret=url)
