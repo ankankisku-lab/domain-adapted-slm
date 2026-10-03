@@ -1,0 +1,38 @@
+{
+  "run_id": "eval_gguf_sft_r16_q8-20260927-213124-0f5f7d",
+  "phase": "eval_gguf_sft_r16_q8",
+  "config": {
+    "gguf": "models/sft_r16/sft_r16-Q8_0.gguf",
+    "gguf_size_gb": 3.187,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB)",
+    "llama_cpp_build": "b11209",
+    "parallel_slots": 2,
+    "placement": "fit",
+    "layers_on_gpu": "15/29",
+    "vram_model_loaded_mib": 2281,
+    "vram_after_run_mib": 2323,
+    "gen_tok_s_median": 8.7,
+    "gen_tok_s_p10": 6.9,
+    "ttft_ms_median": 1054.5,
+    "ttft_ms_p95": 2171.5,
+    "latency_ms_p50": 4837.7,
+    "latency_ms_p95": 7950.1,
+    "throughput_questions_per_min": 23.2
+  },
+  "metrics": {
+    "n": 1147,
+    "accuracy": 0.4141,
+    "answer_line_rate": 1.0,
+    "hit_max_new_tokens_rate": 0.0,
+    "mean_output_tokens": 33.6,
+    "accuracy_strict_sign": 0.4124,
+    "accuracy_lenient_0.5pct": 0.6617,
+    "accuracy_by_program_steps": {
+      "1": 0.4526,
+      "2": 0.3545,
+      "3+": 0.4048
+    },
+    "accuracy_yes_no": 0.9,
+    "accuracy_label_consistent": 0.4344
+  }
+}

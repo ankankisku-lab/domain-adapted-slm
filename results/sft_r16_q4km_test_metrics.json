@@ -1,0 +1,33 @@
+{
+  "n": 1147,
+  "accuracy": 0.3906,
+  "answer_line_rate": 1.0,
+  "hit_max_new_tokens_rate": 0.0,
+  "mean_output_tokens": 33.8,
+  "accuracy_strict_sign": 0.3897,
+  "accuracy_lenient_0.5pct": 0.6382,
+  "accuracy_by_program_steps": {
+    "1": 0.4281,
+    "2": 0.3374,
+    "3+": 0.3571
+  },
+  "accuracy_yes_no": 0.9,
+  "accuracy_label_consistent": 0.4105,
+  "serving": {
+    "gguf": "models/sft_r16/sft_r16-Q4_K_M.gguf",
+    "gguf_size_gb": 1.881,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB)",
+    "llama_cpp_build": "b11209",
+    "parallel_slots": 2,
+    "gpu_layers": 99,
+    "vram_model_loaded_mib": 2633,
+    "vram_after_run_mib": 2645,
+    "gen_tok_s_median": 30.8,
+    "gen_tok_s_p10": 21.9,
+    "ttft_ms_median": 424.3,
+    "ttft_ms_p95": 811.4,
+    "latency_ms_p50": 1630.5,
+    "latency_ms_p95": 2722.1,
+    "throughput_questions_per_min": 70.8
+  }
+}

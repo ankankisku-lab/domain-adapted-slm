@@ -1,0 +1,132 @@
+{
+  "model": "sft_r16",
+  "benchmark": "FinQA test (1,147), strict scorer",
+  "gpu": "RTX 3050 Laptop 4 GB, llama.cpp b11209, 2 parallel slots",
+  "reference_colab_bnb4_lora_accuracy": 0.4246,
+  "table": [
+    {
+      "quant": "f16",
+      "size_gb": 5.992,
+      "accuracy": 0.4185,
+      "accuracy_lenient_0.5pct": 0.66,
+      "layers_on_gpu": "8/29",
+      "vram_mib": 2349,
+      "ttft_ms_p50": 2257.0,
+      "latency_ms_p50": 8400.1,
+      "latency_ms_p95": 14814.7,
+      "questions_per_min": 6.6
+    },
+    {
+      "quant": "Q8_0",
+      "size_gb": 3.187,
+      "accuracy": 0.4141,
+      "accuracy_lenient_0.5pct": 0.6617,
+      "layers_on_gpu": "15/29",
+      "vram_mib": 2281,
+      "ttft_ms_p50": 1054.5,
+      "latency_ms_p50": 4837.7,
+      "latency_ms_p95": 7950.1,
+      "questions_per_min": 23.2
+    },
+    {
+      "quant": "Q6_K",
+      "size_gb": 2.462,
+      "accuracy": 0.4133,
+      "accuracy_lenient_0.5pct": 0.66,
+      "layers_on_gpu": "29/29",
+      "vram_mib": 3227,
+      "ttft_ms_p50": 465.7,
+      "latency_ms_p50": 1778.5,
+      "latency_ms_p95": 2925.4,
+      "questions_per_min": 64.9
+    },
+    {
+      "quant": "Q5_K_M",
+      "size_gb": 2.163,
+      "accuracy": 0.4176,
+      "accuracy_lenient_0.5pct": 0.6574,
+      "layers_on_gpu": "29/29",
+      "vram_mib": 2921,
+      "ttft_ms_p50": 426.5,
+      "latency_ms_p50": 1638.9,
+      "latency_ms_p95": 2671.4,
+      "questions_per_min": 70.7
+    },
+    {
+      "quant": "Q4_K_M",
+      "size_gb": 1.881,
+      "accuracy": 0.3906,
+      "accuracy_lenient_0.5pct": 0.6382,
+      "layers_on_gpu": "29/29",
+      "vram_mib": 2633,
+      "ttft_ms_p50": 424.3,
+      "latency_ms_p50": 1630.5,
+      "latency_ms_p95": 2722.1,
+      "questions_per_min": 70.8
+    },
+    {
+      "quant": "Q4_K_M-imatrix",
+      "size_gb": 1.881,
+      "accuracy": 0.4019,
+      "accuracy_lenient_0.5pct": 0.6347,
+      "layers_on_gpu": "29/29",
+      "vram_mib": 2633,
+      "ttft_ms_p50": 423.2,
+      "latency_ms_p50": 1569.0,
+      "latency_ms_p95": 2623.9,
+      "questions_per_min": 73.5
+    }
+  ],
+  "paired_tests": [
+    {
+      "a": "sft_r16",
+      "b": "baseline",
+      "only_a_right": 273,
+      "only_b_right": 108,
+      "p_exact_mcnemar": 0.0
+    },
+    {
+      "a": "sft_r16",
+      "b": "sft_r16_f16",
+      "only_a_right": 91,
+      "only_b_right": 84,
+      "p_exact_mcnemar": 0.6503
+    },
+    {
+      "a": "sft_r16_f16",
+      "b": "sft_r16_q5km",
+      "only_a_right": 36,
+      "only_b_right": 35,
+      "p_exact_mcnemar": 1.0
+    },
+    {
+      "a": "sft_r16_f16",
+      "b": "sft_r16_q4km",
+      "only_a_right": 81,
+      "only_b_right": 49,
+      "p_exact_mcnemar": 0.0063
+    },
+    {
+      "a": "sft_r16_q5km",
+      "b": "sft_r16_q4km",
+      "only_a_right": 80,
+      "only_b_right": 49,
+      "p_exact_mcnemar": 0.008
+    },
+    {
+      "a": "sft_r16_q4km_imatrix",
+      "b": "sft_r16_q4km",
+      "only_a_right": 67,
+      "only_b_right": 54,
+      "p_exact_mcnemar": 0.2753
+    },
+    {
+      "a": "sft_r16_f16",
+      "b": "sft_r16_q4km_imatrix",
+      "only_a_right": 64,
+      "only_b_right": 45,
+      "p_exact_mcnemar": 0.0842
+    }
+  ],
+  "conclusion": "Merge + GGUF conversion is lossless (p=0.65). Q5_K_M matches f16 (p=1.0) at 2.16 GB, fully on the 4 GB GPU. Q4_K_M loses ~2.8 pts vs f16 (p=0.006); the imatrix variant's +1.1 pts over plain Q4_K_M is not significant (p=0.28)."
+}

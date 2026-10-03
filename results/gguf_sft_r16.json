@@ -1,0 +1,31 @@
+{
+  "tag": "sft_r16",
+  "adapter": "ankankisku/finqa-llama32-3b-sft-r16",
+  "llama_cpp_build": "b11209",
+  "files": {
+    "f16": {
+      "path": "models\\sft_r16\\sft_r16-f16.gguf",
+      "size_gb": 5.992
+    },
+    "Q8_0": {
+      "path": "models\\sft_r16\\sft_r16-Q8_0.gguf",
+      "size_gb": 3.187
+    },
+    "Q6_K": {
+      "path": "models\\sft_r16\\sft_r16-Q6_K.gguf",
+      "size_gb": 2.462
+    },
+    "Q5_K_M": {
+      "path": "models\\sft_r16\\sft_r16-Q5_K_M.gguf",
+      "size_gb": 2.163
+    },
+    "Q4_K_M": {
+      "path": "models\\sft_r16\\sft_r16-Q4_K_M.gguf",
+      "size_gb": 1.881
+    },
+    "Q4_K_M-imatrix": {
+      "path": "models\\sft_r16\\sft_r16-Q4_K_M-imatrix.gguf",
+      "size_gb": 1.881
+    }
+  }
+}

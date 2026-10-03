@@ -1,0 +1,35 @@
+{
+  "run_id": "eval_gguf_base_q5km-20260928-020450-38d850",
+  "phase": "eval_gguf_base_q5km",
+  "config": {
+    "gguf": "models/base/base-Q5_K_M.gguf",
+    "gguf_size_gb": 2.163,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB)",
+    "llama_cpp_build": "b11209",
+    "parallel_slots": 2,
+    "placement": "ngl 99",
+    "layers_on_gpu": "29/29",
+    "vram_model_loaded_mib": 2921,
+    "vram_after_run_mib": 2933,
+    "gen_tok_s_median": 50.6,
+    "gen_tok_s_p10": 44.0,
+    "ttft_ms_median": 222.7,
+    "ttft_ms_p95": 480.8,
+    "latency_ms_p50": 2741.1,
+    "latency_ms_p95": 7004.8,
+    "throughput_questions_per_min": 38.7
+  },
+  "metrics": {
+    "n": 500,
+    "accuracy": 0.526,
+    "answer_line_rate": 0.902,
+    "hit_max_new_tokens_rate": 0.03,
+    "mean_output_tokens": 137.7,
+    "accuracy_by_answer_type": {
+      "arithmetic": 0.5524,
+      "count": 0.4167,
+      "multi-span": 0.5238,
+      "span": 0.507
+    }
+  }
+}
