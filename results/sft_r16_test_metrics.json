@@ -1,0 +1,29 @@
+{
+  "n": 1147,
+  "accuracy": 0.4246,
+  "answer_line_rate": 1.0,
+  "hit_max_new_tokens_rate": 0.0,
+  "mean_output_tokens": 33.5,
+  "accuracy_strict_sign": 0.4246,
+  "accuracy_lenient_0.5pct": 0.6548,
+  "accuracy_by_program_steps": {
+    "1": 0.4602,
+    "2": 0.379,
+    "3+": 0.369
+  },
+  "accuracy_yes_no": 0.9,
+  "accuracy_label_consistent": 0.4459,
+  "run": {
+    "model": "outputs/sft_r16/adapter",
+    "tag": "sft_r16",
+    "split": "test",
+    "quantization": "bnb-4bit (Unsloth)",
+    "decoding": "greedy",
+    "batch_size": 16,
+    "max_new_tokens": 384,
+    "gpu": "Tesla T4",
+    "peak_vram_gb": 8.13,
+    "batched_generation_tok_s_this_session": 19.8,
+    "git_commit": "0640129"
+  }
+}

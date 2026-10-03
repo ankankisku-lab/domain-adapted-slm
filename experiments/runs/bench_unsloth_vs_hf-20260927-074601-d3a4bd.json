@@ -1,0 +1,32 @@
+{
+  "run_id": "bench_unsloth_vs_hf-20260927-074601-d3a4bd",
+  "phase": "bench_unsloth_vs_hf",
+  "config": {
+    "rank": 16,
+    "batch": 2,
+    "grad_accum": 8,
+    "max_len": 1738,
+    "steps": 25,
+    "warmup_steps_excluded": 3,
+    "precision": "fp16",
+    "optimizer": "adamw_8bit",
+    "gpu": "Tesla T4"
+  },
+  "metrics": {
+    "gpu": "Tesla T4",
+    "throughput_speedup": 1.47,
+    "tokens_per_s": {
+      "hf": 475.8,
+      "unsloth": 698.5
+    },
+    "peak_vram_reserved_gb": {
+      "hf": 13.74,
+      "unsloth": 4.33
+    },
+    "peak_vram_allocated_gb": {
+      "hf": 9.95,
+      "unsloth": 3.54
+    },
+    "vram_reduction_pct": 68.5
+  }
+}

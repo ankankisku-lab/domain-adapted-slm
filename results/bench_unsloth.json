@@ -1,0 +1,23 @@
+{
+  "backend": "unsloth",
+  "linear4bit_compute_dtypes": [
+    "torch.float16"
+  ],
+  "gpu": "Tesla T4",
+  "model": "unsloth/Llama-3.2-3B-Instruct-bnb-4bit",
+  "config": {
+    "rank": 16,
+    "batch": 2,
+    "grad_accum": 8,
+    "max_len": 1738,
+    "steps": 25,
+    "warmup_steps_excluded": 3,
+    "precision": "fp16",
+    "optimizer": "adamw_8bit"
+  },
+  "median_step_s": 21.22,
+  "tokens_per_s": 698.5,
+  "peak_vram_allocated_gb": 3.54,
+  "peak_vram_reserved_gb": 4.33,
+  "final_logged_loss": 1.7008460998535155
+}
