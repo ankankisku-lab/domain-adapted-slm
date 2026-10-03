@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-09-27T01:58:06+00:00",
+  "sources": {
+    "finqa": {
+      "role": "training, preference construction, held-out in-domain eval",
+      "homepage": "https://github.com/czyssrs/FinQA",
+      "revision": "0f16e2867befa6840783e58be38c9efb9229d742",
+      "licenses": [
+        "MIT (github.com/czyssrs/FinQA)",
+        "CC-BY-4.0 (huggingface.co/datasets/ibm-research/finqa)"
+      ],
+      "citation": "Chen et al., 2021. FinQA: A Dataset of Numerical Reasoning over Financial Data. EMNLP.",
+      "files": {
+        "train": {
+          "url": "https://raw.githubusercontent.com/czyssrs/FinQA/0f16e2867befa6840783e58be38c9efb9229d742/dataset/train.json",
+          "path": "data/raw/finqa/train.json",
+          "bytes": 78216616,
+          "sha256": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+          "records": 6251
+        },
+        "dev": {
+          "url": "https://raw.githubusercontent.com/czyssrs/FinQA/0f16e2867befa6840783e58be38c9efb9229d742/dataset/dev.json",
+          "path": "data/raw/finqa/dev.json",
+          "bytes": 10954658,
+          "sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+          "records": 883
+        },
+        "test": {
+          "url": "https://raw.githubusercontent.com/czyssrs/FinQA/0f16e2867befa6840783e58be38c9efb9229d742/dataset/test.json",
+          "path": "data/raw/finqa/test.json",
+          "bytes": 14395143,
+          "sha256": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+          "records": 1147
+        }
+      }
+    },
+    "tatqa": {
+      "role": "external evaluation only (never used for training)",
+      "homepage": "https://huggingface.co/datasets/next-tat/TAT-QA",
+      "revision": "c96247f5077eac447f63527fd3dcfdc58bb56d6a",
+      "licenses": [
+        "CC-BY-4.0"
+      ],
+      "citation": "Zhu et al., 2021. TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance. ACL.",
+      "files": {
+        "dev": {
+          "url": "https://huggingface.co/datasets/next-tat/TAT-QA/resolve/c96247f5077eac447f63527fd3dcfdc58bb56d6a/tatqa_dataset_dev.json",
+          "path": "data/raw/tatqa/dev.json",
+          "bytes": 1601590,
+          "sha256": "7ccea93f242ba6af13a302edafa0f910df50c36834a3ca255c77a8732c57eec3",
+          "records": 1644
+        },
+        "test": {
+          "url": "https://huggingface.co/datasets/next-tat/TAT-QA/resolve/c96247f5077eac447f63527fd3dcfdc58bb56d6a/tatqa_dataset_test_gold.json",
+          "path": "data/raw/tatqa/test.json",
+          "bytes": 1576334,
+          "sha256": "15763f73a9839009d148d35ab3371f78fc6dc67bbdd95547bcd3ecb550f52a08",
+          "records": 1663
+        }
+      }
+    }
+  }
+}

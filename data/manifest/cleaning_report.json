@@ -1,0 +1,66 @@
+{
+  "config": {
+    "max_seq_len": 2048,
+    "response_budget": 256,
+    "prompt_overhead": 64,
+    "max_prompt_tokens": 1728,
+    "tokenizer": "unsloth/Llama-3.2-3B-Instruct"
+  },
+  "pool_funnel_train_dev": {
+    "pool_in": 7134,
+    "dropped_structural": 0,
+    "dropped_number_preservation": 0,
+    "dropped_program_executes": 2,
+    "dropped_answer_agreement": 639,
+    "dropped_grounding": 0,
+    "dropped_length": 79,
+    "pool_out": 6414
+  },
+  "kept_by_split": {
+    "train": 5616,
+    "dev": 798,
+    "test": 1147
+  },
+  "check_failures_non_exclusive": {
+    "pool": {
+      "answer_agreement": 640,
+      "length": 90,
+      "program_executes": 2
+    },
+    "test": {
+      "answer_agreement": 102,
+      "length": 16
+    }
+  },
+  "answer_agreement": {
+    "pool": {
+      "agree": 6494,
+      "missing": 60,
+      "disagree": 580
+    },
+    "test": {
+      "agree": 1045,
+      "missing": 14,
+      "disagree": 88
+    }
+  },
+  "cleaning_rule_applications": {
+    "space_before_punct": 449972,
+    "dollar_space": 107370,
+    "paren_inner_space": 47741,
+    "dup_percent": 22344,
+    "decode_possessive": 19930,
+    "decode_curly_double_quote": 17151,
+    "dropped_empty_sentence": 13081,
+    "dup_negative": 12886,
+    "double_terminal_punct": 8208,
+    "empty_percent_annotation": 1031,
+    "percent_space": 647,
+    "decode_double_open_quote": 470,
+    "decode_double_close_quote": 420,
+    "decode_bullet": 168,
+    "decode_open_quote": 8,
+    "decode_close_quote": 4
+  },
+  "html_or_non_ascii_found": 0
+}

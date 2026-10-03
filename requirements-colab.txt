@@ -1,0 +1,13 @@
+# Pinned from the verified Colab T4 run (environment/colab_t4.json, 2026-09-27T02:48:23+00:00).
+# Colab ships torch; install on a fresh runtime with: %pip install -q -r requirements-colab.txt
+unsloth==2026.9.11
+transformers==5.5.0
+trl==0.24.0
+peft==0.20.0
+bitsandbytes==0.50.2
+accelerate==1.14.0
+datasets==4.3.0
+sentence-transformers==5.7.0
+faiss-cpu==1.15.1
+evaluate==0.4.6
+rouge-score

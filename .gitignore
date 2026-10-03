@@ -1,0 +1,26 @@
+# Large artifacts live on the Hugging Face Hub, not in git
+*.gguf
+*.safetensors
+*.bin
+*.pt
+outputs/
+checkpoints/
+models/
+data/raw/
+data/interim/
+
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.cache/
+data/standard/
+tools/
+logs/
+.colab_sync/
+.colab_sync.lock
+
+# Private: interview prep and editor settings stay local
+docs/
+.vscode/

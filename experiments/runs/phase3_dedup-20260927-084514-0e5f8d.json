@@ -1,0 +1,21 @@
+{
+  "run_id": "phase3_dedup-20260927-084514-0e5f8d",
+  "phase": "phase3_dedup",
+  "config": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "text": "question+gold_evidence",
+    "top_k": 5,
+    "rule": "similarity+same_answer+same_args",
+    "threshold": 0.86,
+    "labels": "200 pairs, annotator=Claude (see data/labels/dedup_labels_provenance.json)"
+  },
+  "metrics": {
+    "precision": 0.9,
+    "recall": 0.977,
+    "f1": 0.937,
+    "pool_in": 6409,
+    "removed_duplicates": 312,
+    "removed_test_contamination": 29,
+    "pool_out": 6068
+  }
+}

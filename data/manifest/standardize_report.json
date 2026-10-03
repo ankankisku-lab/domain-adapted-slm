@@ -1,0 +1,22 @@
+{
+  "finqa": {
+    "records": 8281,
+    "by_split": {
+      "train": 6251,
+      "dev": 883,
+      "test": 1147
+    },
+    "structural_issues": {
+      "empty_answer_text": 74,
+      "non_numeric_exe_ans": 154
+    }
+  },
+  "tatqa_eval": {
+    "records": 3307,
+    "by_split": {
+      "dev": 1644,
+      "test": 1663
+    },
+    "structural_issues": {}
+  }
+}

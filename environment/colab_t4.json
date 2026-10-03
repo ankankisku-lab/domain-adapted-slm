@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-09-27T02:48:23+00:00",
+  "runtime": "google-colab-pro",
+  "gpu": {
+    "name": "Tesla T4",
+    "vram_gb": 14.56,
+    "compute_capability": "7.5",
+    "bf16_supported": false
+  },
+  "host": {
+    "python": "3.13.15",
+    "ram_gb": 12.67,
+    "cpu_count": 2,
+    "disk_free_gb": 187.64
+  },
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.5.0",
+    "trl": "0.24.0",
+    "peft": "0.20.0",
+    "unsloth": "2026.9.11",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.14.0",
+    "datasets": "4.3.0",
+    "sentence-transformers": "5.7.0",
+    "faiss-cpu": "1.15.1",
+    "evaluate": "0.4.6",
+    "cuda": "12.8"
+  },
+  "orpo_import": "trl",
+  "smoke_test": {
+    "model": "unsloth/Llama-3.2-3B-Instruct-bnb-4bit",
+    "load_peak_vram_gb": 2.15,
+    "generate_peak_vram_gb": 2.26,
+    "new_tokens": 83,
+    "hf_generate_tok_s": 12.0
+  }
+}

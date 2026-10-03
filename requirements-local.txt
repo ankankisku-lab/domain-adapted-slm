@@ -1,0 +1,14 @@
+# Local (Windows, CPU / 4 GB GPU) tooling. Training dependencies live in requirements-colab.txt.
+tokenizers
+huggingface_hub
+transformers
+datasets
+accelerate
+jinja2
+sentence-transformers
+numpy
+# CPU torch: pip install torch --index-url https://download.pytorch.org/whl/cpu
+fastapi
+uvicorn
+peft
+safetensors

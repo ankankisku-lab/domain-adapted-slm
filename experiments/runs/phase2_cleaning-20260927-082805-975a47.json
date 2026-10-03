@@ -1,0 +1,32 @@
+{
+  "run_id": "phase2_cleaning-20260927-082805-975a47",
+  "phase": "phase2_cleaning",
+  "config": {
+    "max_seq_len": 2048,
+    "response_budget": 256,
+    "prompt_overhead": 64,
+    "max_prompt_tokens": 1728,
+    "tokenizer": "unsloth/Llama-3.2-3B-Instruct"
+  },
+  "metrics": {
+    "funnel": {
+      "pool_in": 7134,
+      "dropped_structural": 0,
+      "dropped_number_preservation": 0,
+      "dropped_program_executes": 2,
+      "dropped_answer_agreement": 639,
+      "dropped_grounding": 0,
+      "dropped_length": 84,
+      "pool_out": 6409
+    },
+    "kept_by_split": {
+      "train": 5614,
+      "dev": 795,
+      "test": 1147
+    },
+    "test_flags": {
+      "answer_agreement": 102,
+      "length": 16
+    }
+  }
+}

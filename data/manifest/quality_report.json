@@ -1,0 +1,21 @@
+{
+  "config": {
+    "low_length_ratio_reported_below": 0.5,
+    "drop_rules": [
+      "truncated_question",
+      "question_year_mismatch"
+    ]
+  },
+  "funnel": {
+    "pool_in": 6072,
+    "dropped_truncated_question": 8,
+    "dropped_question_year_mismatch": 39,
+    "pool_out": 6025
+  },
+  "flagged_non_exclusive": {
+    "repetitive_context": 61,
+    "question_year_mismatch": 39,
+    "truncated_question": 8,
+    "low_length_ratio": 32
+  }
+}

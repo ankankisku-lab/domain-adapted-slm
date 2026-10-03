@@ -1,0 +1,1662 @@
+{
+  "strata": {
+    "0.80-0.88|same": {
+      "population": 9,
+      "sampled": 6
+    },
+    "0.80-0.88|diff": {
+      "population": 7606,
+      "sampled": 10
+    },
+    "0.88-0.92|same": {
+      "population": 28,
+      "sampled": 10
+    },
+    "0.88-0.92|diff": {
+      "population": 7696,
+      "sampled": 12
+    },
+    "0.92-0.95|same": {
+      "population": 81,
+      "sampled": 16
+    },
+    "0.92-0.95|diff": {
+      "population": 5124,
+      "sampled": 14
+    },
+    "0.95-0.97|same": {
+      "population": 82,
+      "sampled": 17
+    },
+    "0.95-0.97|diff": {
+      "population": 2598,
+      "sampled": 16
+    },
+    "0.97-0.98|same": {
+      "population": 68,
+      "sampled": 17
+    },
+    "0.97-0.98|diff": {
+      "population": 977,
+      "sampled": 16
+    },
+    "0.98-0.99|same": {
+      "population": 89,
+      "sampled": 17
+    },
+    "0.98-0.99|diff": {
+      "population": 755,
+      "sampled": 16
+    },
+    "0.99-1.00|same": {
+      "population": 63,
+      "sampled": 17
+    },
+    "0.99-1.00|diff": {
+      "population": 792,
+      "sampled": 16
+    }
+  },
+  "pairs": {
+    "1": {
+      "a": "CME/2012/page_73.pdf-2",
+      "b": "AAPL/2006/page_103.pdf-2",
+      "similarity": 0.8289088010787964,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.80-0.88|same"
+    },
+    "2": {
+      "a": "JPM/2014/page_128.pdf-2",
+      "b": "JPM/2017/page_145.pdf-3",
+      "similarity": 0.9822145700454712,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "3": {
+      "a": "PPG/2005/page_20.pdf-1",
+      "b": "PPG/2005/page_20.pdf-3",
+      "similarity": 0.9498813152313232,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "4": {
+      "a": "RSG/2015/page_133.pdf-1",
+      "b": "RSG/2017/page_138.pdf-1",
+      "similarity": 0.9732804298400879,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "5": {
+      "a": "UPS/2009/page_33.pdf-3",
+      "b": "L/2009/page_84.pdf-4",
+      "similarity": 0.9630574584007263,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "6": {
+      "a": "RE/2014/page_40.pdf-2",
+      "b": "RE/2016/page_40.pdf-1",
+      "similarity": 0.9722387790679932,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "7": {
+      "a": "GS/2017/page_74.pdf-2",
+      "b": "GS/2016/page_77.pdf-1",
+      "similarity": 0.9902210235595703,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "8": {
+      "a": "CDNS/2016/page_32.pdf-3",
+      "b": "CDNS/2012/page_30.pdf-1",
+      "similarity": 0.9941263198852539,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "9": {
+      "a": "AWK/2015/page_127.pdf-2",
+      "b": "AWK/2015/page_127.pdf-3",
+      "similarity": 0.9645335674285889,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "10": {
+      "a": "ZBH/2004/page_65.pdf-2",
+      "b": "BLL/2006/page_89.pdf-2",
+      "similarity": 0.9316821098327637,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "11": {
+      "a": "DG/2006/page_58.pdf-2",
+      "b": "DG/2009/page_77.pdf-1",
+      "similarity": 0.9883825778961182,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "12": {
+      "a": "UAA/2017/page_86.pdf-1",
+      "b": "UAA/2017/page_86.pdf-2",
+      "similarity": 0.9765462875366211,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "13": {
+      "a": "ADBE/2011/page_83.pdf-4",
+      "b": "ADBE/2009/page_81.pdf-3",
+      "similarity": 0.9935078024864197,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "14": {
+      "a": "HII/2011/page_90.pdf-1",
+      "b": "HII/2011/page_90.pdf-3",
+      "similarity": 0.9216399192810059,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "15": {
+      "a": "BLK/2013/page_124.pdf-1",
+      "b": "BLK/2016/page_119.pdf-2",
+      "similarity": 0.9057199954986572,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "16": {
+      "a": "ADBE/2003/page_126.pdf-2",
+      "b": "ADBE/2003/page_126.pdf-1",
+      "similarity": 0.9338648319244385,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "17": {
+      "a": "DISCA/2012/page_54.pdf-3",
+      "b": "DISCA/2012/page_54.pdf-4",
+      "similarity": 0.9903822541236877,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "18": {
+      "a": "UPS/2013/page_34.pdf-2",
+      "b": "UPS/2017/page_31.pdf-3",
+      "similarity": 0.9861632585525513,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "19": {
+      "a": "ZBH/2003/page_42.pdf-1",
+      "b": "ZBH/2003/page_42.pdf-2",
+      "similarity": 0.9898941516876221,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "20": {
+      "a": "UNP/2011/page_56.pdf-2",
+      "b": "UNP/2015/page_56.pdf-3",
+      "similarity": 0.9544819593429565,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "21": {
+      "a": "CE/2017/page_20.pdf-2",
+      "b": "CE/2017/page_20.pdf-4",
+      "similarity": 0.9808187484741211,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "22": {
+      "a": "RSG/2010/page_114.pdf-1",
+      "b": "RSG/2009/page_118.pdf-1",
+      "similarity": 0.9900044202804565,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "23": {
+      "a": "HOLX/2009/page_133.pdf-1",
+      "b": "HOLX/2008/page_140.pdf-1",
+      "similarity": 0.8977718353271484,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "24": {
+      "a": "C/2009/page_141.pdf-3",
+      "b": "C/2009/page_141.pdf-4",
+      "similarity": 0.9842613935470581,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "25": {
+      "a": "ZBH/2008/page_72.pdf-2",
+      "b": "RE/2010/page_42.pdf-2",
+      "similarity": 0.871080756187439,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "26": {
+      "a": "RE/2015/page_110.pdf-1",
+      "b": "RE/2015/page_110.pdf-2",
+      "similarity": 0.9485843181610107,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "27": {
+      "a": "PNC/2018/page_45.pdf-3",
+      "b": "UNP/2015/page_21.pdf-1",
+      "similarity": 0.9711114168167114,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "28": {
+      "a": "AMT/2010/page_82.pdf-3",
+      "b": "AMT/2010/page_82.pdf-4",
+      "similarity": 0.9482927918434143,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "29": {
+      "a": "HII/2012/page_127.pdf-1",
+      "b": "BKR/2018/page_127.pdf-3",
+      "similarity": 0.9421753287315369,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "30": {
+      "a": "JPM/2014/page_128.pdf-2",
+      "b": "JPM/2014/page_128.pdf-3",
+      "similarity": 0.9943233728408813,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "31": {
+      "a": "ETR/2007/page_36.pdf-3",
+      "b": "MS/2013/page_223.pdf-2",
+      "similarity": 0.871317982673645,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "32": {
+      "a": "AON/2011/page_61.pdf-1",
+      "b": "AON/2011/page_134.pdf-1",
+      "similarity": 0.8866539597511292,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "33": {
+      "a": "ABMD/2011/page_33.pdf-2",
+      "b": "ABMD/2012/page_41.pdf-2",
+      "similarity": 0.9902748465538025,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "34": {
+      "a": "ECL/2017/page_57.pdf-4",
+      "b": "ILMN/2006/page_57.pdf-2",
+      "similarity": 0.9470250606536865,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "35": {
+      "a": "FIS/2007/page_52.pdf-4",
+      "b": "FIS/2007/page_94.pdf-2",
+      "similarity": 0.9351279735565186,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "36": {
+      "a": "GS/2012/page_83.pdf-1",
+      "b": "GS/2012/page_83.pdf-2",
+      "similarity": 0.9949651956558228,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "37": {
+      "a": "ETR/2004/page_159.pdf-2",
+      "b": "ETR/2004/page_19.pdf-2",
+      "similarity": 0.9500720500946045,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "38": {
+      "a": "AAPL/2007/page_79.pdf-1",
+      "b": "OKE/2008/page_86.pdf-1",
+      "similarity": 0.8749498128890991,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "39": {
+      "a": "INTC/2017/page_45.pdf-3",
+      "b": "INTC/2018/page_48.pdf-2",
+      "similarity": 0.9989367723464966,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "40": {
+      "a": "MAS/2017/page_37.pdf-1",
+      "b": "MAS/2018/page_35.pdf-1",
+      "similarity": 0.9867289066314697,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "41": {
+      "a": "ETR/2011/page_273.pdf-4",
+      "b": "ETR/2011/page_377.pdf-1",
+      "similarity": 0.9435129761695862,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "42": {
+      "a": "AAL/2015/page_18.pdf-2",
+      "b": "AAL/2015/page_18.pdf-4",
+      "similarity": 0.9172531366348267,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "43": {
+      "a": "LMT/2017/page_83.pdf-2",
+      "b": "LMT/2018/page_85.pdf-2",
+      "similarity": 0.9476335644721985,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "44": {
+      "a": "LMT/2015/page_86.pdf-3",
+      "b": "LMT/2014/page_77.pdf-2",
+      "similarity": 0.9899297952651978,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "45": {
+      "a": "ADBE/2003/page_111.pdf-2",
+      "b": "ADBE/2003/page_111.pdf-1",
+      "similarity": 0.9967597723007202,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "46": {
+      "a": "CME/2017/page_97.pdf-5",
+      "b": "CME/2017/page_97.pdf-1",
+      "similarity": 0.9646697044372559,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "47": {
+      "a": "LKQ/2009/page_66.pdf-2",
+      "b": "LKQ/2009/page_66.pdf-4",
+      "similarity": 0.9688696265220642,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "48": {
+      "a": "ADBE/2012/page_87.pdf-3",
+      "b": "ADBE/2018/page_66.pdf-3",
+      "similarity": 0.9653794765472412,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "49": {
+      "a": "UNP/2013/page_21.pdf-1",
+      "b": "UNP/2015/page_21.pdf-2",
+      "similarity": 0.9575903415679932,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "50": {
+      "a": "CDNS/2016/page_32.pdf-4",
+      "b": "CDNS/2006/page_30.pdf-3",
+      "similarity": 0.9780204892158508,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "51": {
+      "a": "MSI/2008/page_110.pdf-3",
+      "b": "MSI/2007/page_102.pdf-1",
+      "similarity": 0.9723023176193237,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "52": {
+      "a": "JPM/2018/page_73.pdf-5",
+      "b": "JPM/2015/page_77.pdf-1",
+      "similarity": 0.9930069446563721,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "53": {
+      "a": "SYY/2006/page_26.pdf-1",
+      "b": "SYY/2019/page_9.pdf-2",
+      "similarity": 0.9512544870376587,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "54": {
+      "a": "JPM/2015/page_77.pdf-5",
+      "b": "JPM/2015/page_77.pdf-3",
+      "similarity": 0.9771406650543213,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "55": {
+      "a": "JPM/2015/page_77.pdf-1",
+      "b": "JPM/2017/page_69.pdf-1",
+      "similarity": 0.995857298374176,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "56": {
+      "a": "JPM/2015/page_77.pdf-4",
+      "b": "JPM/2017/page_69.pdf-1",
+      "similarity": 0.9723830223083496,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "57": {
+      "a": "JPM/2016/page_141.pdf-3",
+      "b": "JPM/2017/page_145.pdf-3",
+      "similarity": 0.9832751750946045,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "58": {
+      "a": "AMT/2010/page_36.pdf-1",
+      "b": "AMT/2010/page_36.pdf-4",
+      "similarity": 0.9670930504798889,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "59": {
+      "a": "C/2008/page_100.pdf-2",
+      "b": "JPM/2008/page_85.pdf-1",
+      "similarity": 0.8925946950912476,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "60": {
+      "a": "UNP/2011/page_80.pdf-2",
+      "b": "UNP/2012/page_30.pdf-1",
+      "similarity": 0.8086476922035217,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.80-0.88|same"
+    },
+    "61": {
+      "a": "RSG/2017/page_98.pdf-1",
+      "b": "RSG/2016/page_98.pdf-2",
+      "similarity": 0.9722021818161011,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "62": {
+      "a": "PNC/2016/page_73.pdf-1",
+      "b": "PNC/2015/page_93.pdf-2",
+      "similarity": 0.8978508710861206,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "63": {
+      "a": "C/2008/page_173.pdf-1",
+      "b": "C/2009/page_197.pdf-1",
+      "similarity": 0.9796953201293945,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "64": {
+      "a": "AAP/2016/page_26.pdf-2",
+      "b": "L/2009/page_84.pdf-4",
+      "similarity": 0.9484745264053345,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "65": {
+      "a": "ADI/2010/page_73.pdf-1",
+      "b": "ADI/2011/page_74.pdf-2",
+      "similarity": 0.975942850112915,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "66": {
+      "a": "DISCA/2012/page_54.pdf-4",
+      "b": "DISCA/2014/page_64.pdf-1",
+      "similarity": 0.9913424253463745,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "67": {
+      "a": "C/2018/page_288.pdf-1",
+      "b": "C/2018/page_288.pdf-2",
+      "similarity": 0.9151288270950317,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "68": {
+      "a": "SYY/2014/page_16.pdf-2",
+      "b": "SYY/2019/page_9.pdf-1",
+      "similarity": 0.9622188210487366,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "69": {
+      "a": "IPG/2008/page_62.pdf-2",
+      "b": "IPG/2008/page_62.pdf-4",
+      "similarity": 0.9321070909500122,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "70": {
+      "a": "MO/2014/page_11.pdf-1",
+      "b": "MO/2017/page_10.pdf-2",
+      "similarity": 0.9522997736930847,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "71": {
+      "a": "UPS/2010/page_33.pdf-2",
+      "b": "UPS/2010/page_33.pdf-4",
+      "similarity": 0.9767259359359741,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "72": {
+      "a": "UPS/2014/page_61.pdf-2",
+      "b": "UPS/2014/page_61.pdf-1",
+      "similarity": 0.9226678609848022,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "73": {
+      "a": "CNC/2005/page_39.pdf-2",
+      "b": "CNC/2006/page_37.pdf-4",
+      "similarity": 0.9863364100456238,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "74": {
+      "a": "ANSS/2013/page_55.pdf-1",
+      "b": "ANSS/2013/page_55.pdf-3",
+      "similarity": 0.9751149415969849,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "75": {
+      "a": "ETR/2011/page_216.pdf-1",
+      "b": "ETR/2011/page_216.pdf-4",
+      "similarity": 0.9450722932815552,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "76": {
+      "a": "FIS/2010/page_89.pdf-4",
+      "b": "FIS/2007/page_94.pdf-4",
+      "similarity": 0.9705605506896973,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "77": {
+      "a": "UNP/2008/page_27.pdf-1",
+      "b": "MO/2012/page_44.pdf-1",
+      "similarity": 0.8808568716049194,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "78": {
+      "a": "LKQ/2009/page_77.pdf-2",
+      "b": "LKQ/2010/page_84.pdf-1",
+      "similarity": 0.9981005191802979,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "79": {
+      "a": "AAL/2015/page_74.pdf-1",
+      "b": "AAL/2014/page_80.pdf-1",
+      "similarity": 0.9797894954681396,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "80": {
+      "a": "L/2007/page_213.pdf-1",
+      "b": "UPS/2007/page_103.pdf-1",
+      "similarity": 0.9738934636116028,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "81": {
+      "a": "PNC/2018/page_45.pdf-3",
+      "b": "PNC/2012/page_46.pdf-5",
+      "similarity": 0.9753388166427612,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "82": {
+      "a": "UNP/2007/page_79.pdf-1",
+      "b": "UNP/2007/page_79.pdf-3",
+      "similarity": 0.969530463218689,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "83": {
+      "a": "JPM/2018/page_150.pdf-3",
+      "b": "JPM/2016/page_141.pdf-3",
+      "similarity": 0.976490318775177,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "84": {
+      "a": "JPM/2017/page_145.pdf-3",
+      "b": "JPM/2017/page_145.pdf-2",
+      "similarity": 0.9955878257751465,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "85": {
+      "a": "ETR/2016/page_342.pdf-4",
+      "b": "ETR/2017/page_342.pdf-1",
+      "similarity": 0.8637393712997437,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.80-0.88|same"
+    },
+    "86": {
+      "a": "PKG/2004/page_21.pdf-4",
+      "b": "PKG/2004/page_21.pdf-3",
+      "similarity": 0.9807088375091553,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "87": {
+      "a": "UNP/2011/page_35.pdf-1",
+      "b": "UNP/2012/page_34.pdf-4",
+      "similarity": 0.9270279407501221,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "88": {
+      "a": "AAL/2018/page_13.pdf-2",
+      "b": "AAL/2018/page_13.pdf-1",
+      "similarity": 0.982760488986969,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "89": {
+      "a": "JPM/2014/page_128.pdf-3",
+      "b": "JPM/2017/page_145.pdf-2",
+      "similarity": 0.9818490743637085,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "90": {
+      "a": "BLL/2006/page_89.pdf-3",
+      "b": "BLL/2006/page_47.pdf-3",
+      "similarity": 0.9705039262771606,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "91": {
+      "a": "LKQ/2009/page_77.pdf-1",
+      "b": "LKQ/2010/page_84.pdf-2",
+      "similarity": 0.9889118671417236,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "92": {
+      "a": "SNA/2013/page_93.pdf-2",
+      "b": "SNA/2012/page_93.pdf-3",
+      "similarity": 0.9879066944122314,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "93": {
+      "a": "ADBE/2011/page_83.pdf-3",
+      "b": "ADBE/2009/page_81.pdf-4",
+      "similarity": 0.9880470037460327,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "94": {
+      "a": "V/2008/page_149.pdf-2",
+      "b": "V/2008/page_149.pdf-1",
+      "similarity": 0.9239377975463867,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "95": {
+      "a": "DISCA/2008/page_141.pdf-2",
+      "b": "DISCA/2014/page_64.pdf-3",
+      "similarity": 0.9482783079147339,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "96": {
+      "a": "AON/2011/page_134.pdf-2",
+      "b": "AON/2011/page_134.pdf-1",
+      "similarity": 0.9835488796234131,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "97": {
+      "a": "AMT/2004/page_46.pdf-3",
+      "b": "LMT/2015/page_89.pdf-4",
+      "similarity": 0.8556702136993408,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "98": {
+      "a": "RE/2010/page_120.pdf-1",
+      "b": "RE/2010/page_120.pdf-2",
+      "similarity": 0.8452763557434082,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.80-0.88|same"
+    },
+    "99": {
+      "a": "ETR/2009/page_24.pdf-2",
+      "b": "ETR/2007/page_36.pdf-2",
+      "similarity": 0.9655153751373291,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "100": {
+      "a": "ADBE/2011/page_83.pdf-2",
+      "b": "ADBE/2014/page_70.pdf-4",
+      "similarity": 0.9951633214950562,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "101": {
+      "a": "AAPL/2018/page_23.pdf-1",
+      "b": "AAPL/2014/page_26.pdf-3",
+      "similarity": 0.9868087768554688,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "102": {
+      "a": "HII/2013/page_127.pdf-4",
+      "b": "HII/2013/page_127.pdf-2",
+      "similarity": 0.9846470952033997,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "103": {
+      "a": "SWKS/2011/page_82.pdf-1",
+      "b": "ILMN/2006/page_57.pdf-1",
+      "similarity": 0.9682093262672424,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "104": {
+      "a": "LMT/2018/page_29.pdf-1",
+      "b": "LMT/2018/page_29.pdf-3",
+      "similarity": 0.9679210186004639,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "105": {
+      "a": "DRE/2008/page_49.pdf-1",
+      "b": "DRE/2009/page_60.pdf-1",
+      "similarity": 0.913385272026062,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "106": {
+      "a": "LMT/2015/page_106.pdf-3",
+      "b": "LMT/2017/page_101.pdf-3",
+      "similarity": 0.9873164892196655,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "107": {
+      "a": "IQV/2016/page_79.pdf-1",
+      "b": "IQV/2016/page_79.pdf-3",
+      "similarity": 0.9550286531448364,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "108": {
+      "a": "MAA/2017/page_89.pdf-2",
+      "b": "MAA/2018/page_88.pdf-4",
+      "similarity": 0.9709665775299072,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "109": {
+      "a": "BLL/2011/page_29.pdf-4",
+      "b": "BLL/2011/page_29.pdf-3",
+      "similarity": 0.981503963470459,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "110": {
+      "a": "WRK/2018/page_106.pdf-1",
+      "b": "WRK/2018/page_106.pdf-4",
+      "similarity": 0.9728771448135376,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "111": {
+      "a": "ECL/2016/page_64.pdf-1",
+      "b": "AAP/2016/page_96.pdf-1",
+      "similarity": 0.912287712097168,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "112": {
+      "a": "IPG/2018/page_26.pdf-3",
+      "b": "DVN/2011/page_26.pdf-3",
+      "similarity": 0.9684741497039795,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "113": {
+      "a": "MAS/2010/page_29.pdf-2",
+      "b": "MAS/2013/page_27.pdf-2",
+      "similarity": 0.9948900938034058,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "114": {
+      "a": "ETR/2011/page_340.pdf-1",
+      "b": "ETR/2011/page_273.pdf-2",
+      "similarity": 0.9739950299263,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "115": {
+      "a": "ETR/2016/page_267.pdf-4",
+      "b": "ETR/2016/page_267.pdf-3",
+      "similarity": 0.9862368106842041,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "116": {
+      "a": "RL/2017/page_9.pdf-2",
+      "b": "RL/2013/page_13.pdf-2",
+      "similarity": 0.9507731199264526,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "117": {
+      "a": "PNC/2018/page_81.pdf-2",
+      "b": "PNC/2018/page_81.pdf-1",
+      "similarity": 0.889644980430603,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "118": {
+      "a": "UNP/2014/page_24.pdf-2",
+      "b": "UNP/2011/page_24.pdf-1",
+      "similarity": 0.8530586957931519,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.80-0.88|same"
+    },
+    "119": {
+      "a": "GRMN/2008/page_84.pdf-2",
+      "b": "BDX/2009/page_81.pdf-3",
+      "similarity": 0.8376916646957397,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "120": {
+      "a": "HII/2011/page_69.pdf-4",
+      "b": "HII/2011/page_69.pdf-1",
+      "similarity": 0.9476262331008911,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "121": {
+      "a": "RE/2014/page_106.pdf-3",
+      "b": "RE/2015/page_110.pdf-2",
+      "similarity": 0.9841764569282532,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "122": {
+      "a": "HOLX/2005/page_61.pdf-1",
+      "b": "LMT/2016/page_117.pdf-1",
+      "similarity": 0.9816743731498718,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "123": {
+      "a": "CDNS/2006/page_30.pdf-3",
+      "b": "CDNS/2015/page_30.pdf-2",
+      "similarity": 0.9767825603485107,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "124": {
+      "a": "TROW/2008/page_23.pdf-1",
+      "b": "TROW/2009/page_24.pdf-1",
+      "similarity": 0.9546142816543579,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "125": {
+      "a": "UNP/2015/page_80.pdf-3",
+      "b": "UNP/2017/page_74.pdf-4",
+      "similarity": 0.9933537244796753,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "126": {
+      "a": "LMT/2018/page_104.pdf-1",
+      "b": "LMT/2018/page_104.pdf-4",
+      "similarity": 0.9154297709465027,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "127": {
+      "a": "JPM/2014/page_128.pdf-2",
+      "b": "JPM/2016/page_141.pdf-3",
+      "similarity": 0.9841667413711548,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "128": {
+      "a": "JPM/2014/page_65.pdf-4",
+      "b": "JPM/2014/page_65.pdf-5",
+      "similarity": 0.9745093584060669,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "129": {
+      "a": "MS/2015/page_200.pdf-1",
+      "b": "MS/2015/page_200.pdf-2",
+      "similarity": 0.9956330060958862,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "130": {
+      "a": "PM/2017/page_99.pdf-3",
+      "b": "PM/2017/page_99.pdf-4",
+      "similarity": 0.9985949993133545,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "131": {
+      "a": "V/2009/page_89.pdf-1",
+      "b": "CME/2010/page_91.pdf-2",
+      "similarity": 0.9126416444778442,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "132": {
+      "a": "UNP/2006/page_62.pdf-1",
+      "b": "GPN/2010/page_92.pdf-3",
+      "similarity": 0.9736634492874146,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "133": {
+      "a": "APTV/2015/page_47.pdf-2",
+      "b": "APTV/2016/page_44.pdf-2",
+      "similarity": 0.9980778098106384,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "134": {
+      "a": "RSG/2009/page_78.pdf-1",
+      "b": "UNP/2009/page_25.pdf-4",
+      "similarity": 0.9615507125854492,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "135": {
+      "a": "AAL/2015/page_18.pdf-4",
+      "b": "AAL/2015/page_18.pdf-1",
+      "similarity": 0.9495289325714111,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "136": {
+      "a": "BKR/2018/page_52.pdf-2",
+      "b": "BKR/2017/page_49.pdf-1",
+      "similarity": 0.9756089448928833,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "137": {
+      "a": "ETR/2016/page_375.pdf-1",
+      "b": "ETR/2016/page_375.pdf-2",
+      "similarity": 0.9736642837524414,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "138": {
+      "a": "AMT/2003/page_85.pdf-1",
+      "b": "MSI/2006/page_61.pdf-3",
+      "similarity": 0.9348315000534058,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "139": {
+      "a": "ILMN/2006/page_86.pdf-3",
+      "b": "CDNS/2006/page_42.pdf-4",
+      "similarity": 0.9220218658447266,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "140": {
+      "a": "PNC/2007/page_50.pdf-1",
+      "b": "PNC/2014/page_84.pdf-1",
+      "similarity": 0.9907511472702026,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "141": {
+      "a": "CNP/2010/page_31.pdf-2",
+      "b": "CNP/2010/page_31.pdf-1",
+      "similarity": 0.932960033416748,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "142": {
+      "a": "STT/2017/page_63.pdf-2",
+      "b": "BLL/2012/page_31.pdf-1",
+      "similarity": 0.9256260991096497,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "143": {
+      "a": "ADBE/2013/page_68.pdf-3",
+      "b": "ADBE/2011/page_83.pdf-2",
+      "similarity": 0.9963992834091187,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "144": {
+      "a": "AMT/2014/page_120.pdf-1",
+      "b": "PPG/2011/page_70.pdf-2",
+      "similarity": 0.8927156329154968,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "145": {
+      "a": "AAP/2012/page_61.pdf-2",
+      "b": "AAP/2012/page_61.pdf-3",
+      "similarity": 0.959660530090332,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "146": {
+      "a": "IPG/2014/page_23.pdf-1",
+      "b": "UNP/2011/page_21.pdf-3",
+      "similarity": 0.9760622978210449,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "147": {
+      "a": "UPS/2009/page_33.pdf-4",
+      "b": "UPS/2013/page_34.pdf-1",
+      "similarity": 0.9959017038345337,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "148": {
+      "a": "CB/2010/page_117.pdf-1",
+      "b": "CB/2010/page_117.pdf-3",
+      "similarity": 0.9308387041091919,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "149": {
+      "a": "AWK/2015/page_109.pdf-3",
+      "b": "AWK/2015/page_109.pdf-2",
+      "similarity": 0.9256210923194885,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "150": {
+      "a": "CB/2009/page_220.pdf-1",
+      "b": "CB/2008/page_229.pdf-4",
+      "similarity": 0.9971562623977661,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "151": {
+      "a": "UNP/2012/page_23.pdf-3",
+      "b": "UNP/2012/page_23.pdf-4",
+      "similarity": 0.9973474740982056,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "152": {
+      "a": "MRO/2018/page_96.pdf-1",
+      "b": "MRO/2017/page_96.pdf-2",
+      "similarity": 0.9845281839370728,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "153": {
+      "a": "AAL/2015/page_187.pdf-2",
+      "b": "AAL/2015/page_187.pdf-1",
+      "similarity": 0.9422443509101868,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "154": {
+      "a": "AAPL/2018/page_23.pdf-3",
+      "b": "AAPL/2011/page_24.pdf-2",
+      "similarity": 0.9698033332824707,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "155": {
+      "a": "MRO/2009/page_58.pdf-3",
+      "b": "MRO/2008/page_70.pdf-2",
+      "similarity": 0.861894965171814,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "156": {
+      "a": "ETR/2002/page_86.pdf-1",
+      "b": "ETR/2002/page_86.pdf-2",
+      "similarity": 0.9087927341461182,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "157": {
+      "a": "ETFC/2012/page_155.pdf-1",
+      "b": "ETFC/2011/page_144.pdf-1",
+      "similarity": 0.9687384963035583,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "158": {
+      "a": "JPM/2018/page_73.pdf-5",
+      "b": "JPM/2016/page_73.pdf-3",
+      "similarity": 0.983622670173645,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "159": {
+      "a": "GS/2012/page_83.pdf-1",
+      "b": "GS/2013/page_85.pdf-1",
+      "similarity": 0.9648631811141968,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "160": {
+      "a": "MRO/2012/page_39.pdf-3",
+      "b": "MRO/2013/page_39.pdf-3",
+      "similarity": 0.9903399348258972,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "161": {
+      "a": "PPG/2013/page_40.pdf-2",
+      "b": "PPG/2013/page_40.pdf-1",
+      "similarity": 0.9975067377090454,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "162": {
+      "a": "MRO/2018/page_96.pdf-2",
+      "b": "MRO/2017/page_96.pdf-2",
+      "similarity": 0.9845069646835327,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "163": {
+      "a": "LMT/2013/page_87.pdf-4",
+      "b": "LMT/2016/page_105.pdf-3",
+      "similarity": 0.9815808534622192,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "164": {
+      "a": "JPM/2018/page_150.pdf-3",
+      "b": "JPM/2017/page_145.pdf-2",
+      "similarity": 0.9754091501235962,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "165": {
+      "a": "CE/2017/page_20.pdf-2",
+      "b": "CE/2017/page_20.pdf-1",
+      "similarity": 0.9779453873634338,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "166": {
+      "a": "ZBH/2007/page_54.pdf-3",
+      "b": "ZBH/2003/page_42.pdf-2",
+      "similarity": 0.9657295942306519,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "167": {
+      "a": "APD/2016/page_117.pdf-1",
+      "b": "HWM/2016/page_119.pdf-2",
+      "similarity": 0.9020321369171143,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "168": {
+      "a": "C/2018/page_53.pdf-2",
+      "b": "DVN/2018/page_35.pdf-2",
+      "similarity": 0.8858562111854553,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "169": {
+      "a": "ILMN/2006/page_92.pdf-2",
+      "b": "FIS/2007/page_94.pdf-1",
+      "similarity": 0.9649488925933838,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "170": {
+      "a": "IP/2015/page_46.pdf-3",
+      "b": "BLL/2010/page_35.pdf-4",
+      "similarity": 0.8134447336196899,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "171": {
+      "a": "D/2002/page_39.pdf-3",
+      "b": "D/2002/page_39.pdf-4",
+      "similarity": 0.9976456761360168,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "172": {
+      "a": "BLK/2013/page_125.pdf-3",
+      "b": "BLK/2013/page_125.pdf-4",
+      "similarity": 0.9954778552055359,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "173": {
+      "a": "ETFC/2014/page_22.pdf-1",
+      "b": "ETFC/2018/page_32.pdf-1",
+      "similarity": 0.9833396673202515,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "174": {
+      "a": "WRK/2018/page_106.pdf-1",
+      "b": "WRK/2018/page_106.pdf-3",
+      "similarity": 0.9694074392318726,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "175": {
+      "a": "STT/2012/page_42.pdf-1",
+      "b": "STT/2014/page_54.pdf-2",
+      "similarity": 0.9965754747390747,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "176": {
+      "a": "ETR/2011/page_316.pdf-4",
+      "b": "ETR/2011/page_17.pdf-1",
+      "similarity": 0.946669340133667,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.92-0.95|diff"
+    },
+    "177": {
+      "a": "AON/2007/page_180.pdf-4",
+      "b": "AON/2007/page_180.pdf-1",
+      "similarity": 0.9483883380889893,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "178": {
+      "a": "LMT/2013/page_49.pdf-2",
+      "b": "LMT/2012/page_47.pdf-1",
+      "similarity": 0.9650214910507202,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "179": {
+      "a": "BLK/2016/page_75.pdf-1",
+      "b": "APD/2014/page_36.pdf-2",
+      "similarity": 0.9093408584594727,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "180": {
+      "a": "RE/2015/page_148.pdf-1",
+      "b": "FBHS/2017/page_83.pdf-1",
+      "similarity": 0.8682119250297546,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "181": {
+      "a": "APTV/2015/page_47.pdf-4",
+      "b": "APTV/2018/page_34.pdf-4",
+      "similarity": 0.8891364336013794,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "182": {
+      "a": "HII/2017/page_104.pdf-1",
+      "b": "HII/2017/page_104.pdf-2",
+      "similarity": 0.902458667755127,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.88-0.92|diff"
+    },
+    "183": {
+      "a": "LKQ/2010/page_72.pdf-3",
+      "b": "LKQ/2009/page_66.pdf-4",
+      "similarity": 0.9736378192901611,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "184": {
+      "a": "BKR/2017/page_103.pdf-1",
+      "b": "BKR/2017/page_103.pdf-3",
+      "similarity": 0.9871869087219238,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "185": {
+      "a": "ADI/2012/page_65.pdf-2",
+      "b": "ADI/2012/page_65.pdf-3",
+      "similarity": 0.9515097141265869,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "186": {
+      "a": "ETR/2016/page_403.pdf-3",
+      "b": "ETR/2008/page_356.pdf-4",
+      "similarity": 0.8127301931381226,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "187": {
+      "a": "STT/2009/page_83.pdf-2",
+      "b": "EW/2004/page_51.pdf-1",
+      "similarity": 0.9652238488197327,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "188": {
+      "a": "INTC/2018/page_50.pdf-2",
+      "b": "ABMD/2006/page_43.pdf-2",
+      "similarity": 0.9565150141716003,
+      "kind": "pool-test",
+      "same_exe_ans": false,
+      "stratum": "0.95-0.97|diff"
+    },
+    "189": {
+      "a": "IP/2013/page_64.pdf-1",
+      "b": "IP/2014/page_66.pdf-2",
+      "similarity": 0.9803528785705566,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.98-0.99|same"
+    },
+    "190": {
+      "a": "CDNS/2016/page_32.pdf-2",
+      "b": "CDNS/2012/page_30.pdf-2",
+      "similarity": 0.9764671325683594,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.97-0.98|diff"
+    },
+    "191": {
+      "a": "ABMD/2008/page_52.pdf-1",
+      "b": "ABMD/2007/page_52.pdf-1",
+      "similarity": 0.971649169921875,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.97-0.98|same"
+    },
+    "192": {
+      "a": "DISCA/2018/page_39.pdf-4",
+      "b": "DISCA/2011/page_49.pdf-4",
+      "similarity": 0.9249857664108276,
+      "kind": "pool-test",
+      "same_exe_ans": true,
+      "stratum": "0.92-0.95|same"
+    },
+    "193": {
+      "a": "CE/2009/page_35.pdf-1",
+      "b": "CE/2009/page_35.pdf-3",
+      "similarity": 0.9688348770141602,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.95-0.97|same"
+    },
+    "194": {
+      "a": "C/2008/page_105.pdf-1",
+      "b": "C/2008/page_105.pdf-4",
+      "similarity": 0.9924141764640808,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.99-1.00|same"
+    },
+    "195": {
+      "a": "WMT/2018/page_46.pdf-3",
+      "b": "WMT/2018/page_46.pdf-2",
+      "similarity": 0.8799981474876404,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.80-0.88|same"
+    },
+    "196": {
+      "a": "ORLY/2015/page_28.pdf-1",
+      "b": "ORLY/2015/page_28.pdf-3",
+      "similarity": 0.9818183779716492,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.98-0.99|diff"
+    },
+    "197": {
+      "a": "C/2016/page_207.pdf-4",
+      "b": "MMM/2005/page_95.pdf-1",
+      "similarity": 0.8546881675720215,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.80-0.88|diff"
+    },
+    "198": {
+      "a": "MA/2008/page_113.pdf-2",
+      "b": "MA/2009/page_112.pdf-4",
+      "similarity": 0.9947824478149414,
+      "kind": "pool-pool",
+      "same_exe_ans": false,
+      "stratum": "0.99-1.00|diff"
+    },
+    "199": {
+      "a": "ADI/2010/page_90.pdf-2",
+      "b": "ADI/2010/page_90.pdf-1",
+      "similarity": 0.8996256589889526,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    },
+    "200": {
+      "a": "AAPL/2006/page_93.pdf-3",
+      "b": "AAPL/2005/page_75.pdf-2",
+      "similarity": 0.89850914478302,
+      "kind": "pool-pool",
+      "same_exe_ans": true,
+      "stratum": "0.88-0.92|same"
+    }
+  }
+}

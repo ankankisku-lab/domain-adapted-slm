@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FinQA Dataset Report</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --ink-1: #0b0b0b; --ink-2: #52514e; --ink-muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10);
+  --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --ink-1: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --ink-1: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+  --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink-1);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 26px; margin: 0 0 4px; font-weight: 600; }
+h2 { font-size: 18px; margin: 0 0 4px; font-weight: 600; }
+.sub { color: var(--ink-2); margin: 0 0 24px; }
+.note { color: var(--ink-2); font-size: 13.5px; margin: 8px 0 0; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.tile .label { color: var(--ink-2); font-size: 13px; }
+.tile .value { font-size: 26px; font-weight: 600; }
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+.chart { width: 100%; margin-top: 12px; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 16px; height: 2px; border-radius: 1px; }
+details { margin-top: 12px; }
+summary { cursor: pointer; color: var(--ink-2); font-size: 13.5px; }
+.table-wrap { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th { color: var(--ink-2); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+code { font-size: 12.5px; }
+#tip { position: fixed; pointer-events: none; background: var(--surface-1); color: var(--ink-1);
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 13px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12); display: none; z-index: 10; max-width: 280px; }
+#tip .v { font-weight: 600; }
+#tip .k { color: var(--ink-2); }
+#tip .row { display: flex; align-items: center; gap: 8px; }
+#tip .row i { width: 12px; height: 2px; display: inline-block; }
+svg text { fill: var(--ink-muted); font-size: 12px; }
+svg .lbl { fill: var(--ink-2); font-size: 12.5px; }
+svg .val { fill: var(--ink-1); font-size: 12.5px; font-weight: 600; }
+svg .hit { fill: transparent; cursor: default; }
+svg .hit:focus { outline: none; }
+svg .mark { transition: opacity .12s; }
+svg g.hover .mark { opacity: 0.8; }
+</style>
+</head>
+<body>
+<main>
+  <h1>FinQA dataset report</h1>
+  <p class="sub">Financial Reasoning SLM, Phases 1–5 · generated <span id="gen"></span></p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section class="card">
+    <h2>Curation funnel</h2>
+    <p class="note">FinQA train + dev records remaining after each phase. The official test set is excluded here. It's only normalized and flagged, never filtered.</p>
+    <div class="chart" id="funnel"></div>
+    <details><summary>Show every removal step</summary><div class="table-wrap"><table id="drops"></table></div></details>
+  </section>
+
+  <section class="card">
+    <h2>SFT training sequence lengths</h2>
+    <p class="note">Tokens per example (system + report excerpt + question + response, Llama-3.2 tokenizer). Every example fits the <span id="maxseq"></span>-token training context.</p>
+    <div class="chart" id="hist"></div>
+    <details><summary>Show table</summary><div class="table-wrap"><table id="hist-table"></table></div></details>
+  </section>
+
+  <section class="card">
+    <h2>Deduplication rule calibration</h2>
+    <p class="note" id="dedup-note"></p>
+    <div class="legend" id="dedup-legend"></div>
+    <div class="chart" id="dedup"></div>
+    <details><summary>Show precision / recall / F1 table</summary><div class="table-wrap"><table id="dedup-table"></table></div></details>
+  </section>
+
+  <section class="card">
+    <h2>Final splits</h2>
+    <p class="note" id="split-note"></p>
+    <div class="table-wrap"><table id="splits"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Text cleaning rules applied</h2>
+    <p class="note">Named regex rules over FinQA's PDF-extraction artifacts, with how often each fired. A check confirmed that none of them removed a number from any context.</p>
+    <div class="table-wrap"><table id="rules"></table></div>
+  </section>
+</main>
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const DATA = __DATA__;
+const NS = "http://www.w3.org/2000/svg";
+const fmt = n => n.toLocaleString("en-US");
+const tip = document.getElementById("tip");
+
+function el(tag, attrs = {}, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function text(parent, x, y, str, cls, anchor = "start") {
+  const t = el("text", { x, y, class: cls || "", "text-anchor": anchor }, parent);
+  t.textContent = str;
+  return t;
+}
+function showTip(evt, rows) {
+  tip.replaceChildren();
+  for (const r of rows) {
+    const row = document.createElement("div");
+    row.className = "row";
+    if (r.color) { const i = document.createElement("i"); i.style.background = r.color; row.appendChild(i); }
+    const v = document.createElement("span"); v.className = "v"; v.textContent = r.value;
+    const k = document.createElement("span"); k.className = "k"; k.textContent = r.label;
+    row.append(v, k);
+    tip.appendChild(row);
+  }
+  tip.style.display = "block";
+  const box = evt.target.getBoundingClientRect ? evt.target.getBoundingClientRect() : null;
+  const x = evt.clientX ?? (box.left + box.width / 2), y = evt.clientY ?? box.top;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = Math.min(window.innerWidth - w - 8, Math.max(8, x + 12)) + "px";
+  tip.style.top = Math.max(8, y - h - 12) + "px";
+}
+const hideTip = () => { tip.style.display = "none"; };
+function hoverable(g, rowsFn) {
+  g.setAttribute("tabindex", "0");
+  g.addEventListener("pointermove", e => { g.classList.add("hover"); showTip(e, rowsFn()); });
+  g.addEventListener("pointerleave", () => { g.classList.remove("hover"); hideTip(); });
+  g.addEventListener("focus", e => { g.classList.add("hover"); showTip(e, rowsFn()); });
+  g.addEventListener("blur", () => { g.classList.remove("hover"); hideTip(); });
+}
+// Bar with a 4px rounded data end, square at the baseline.
+function barPathH(x0, y, w, h) {
+  const r = Math.min(4, w, h / 2);
+  return `M${x0},${y} H${x0 + w - r} Q${x0 + w},${y} ${x0 + w},${y + r} V${y + h - r} Q${x0 + w},${y + h} ${x0 + w - r},${y + h} H${x0} Z`;
+}
+function barPathV(x, y0, w, h) {
+  const r = Math.min(4, h, w / 2);
+  return `M${x},${y0} V${y0 - h + r} Q${x},${y0 - h} ${x + r},${y0 - h} H${x + w - r} Q${x + w},${y0 - h} ${x + w},${y0 - h + r} V${y0} Z`;
+}
+function niceTicks(max, n = 4) {
+  const raw = max / n, mag = 10 ** Math.floor(Math.log10(raw));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => s >= raw);
+  const ticks = []; for (let v = 0; v <= max + 1e-9; v += step) ticks.push(v);
+  if (ticks[ticks.length - 1] < max) ticks.push(ticks[ticks.length - 1] + step);
+  return ticks;
+}
+function fillTable(id, head, rows, numCols = []) {
+  const t = document.getElementById(id); t.replaceChildren();
+  const tr = document.createElement("tr");
+  head.forEach((h, i) => { const th = document.createElement("th"); th.textContent = h; if (numCols.includes(i)) th.className = "num"; tr.appendChild(th); });
+  const thead = document.createElement("thead"); thead.appendChild(tr); t.appendChild(thead);
+  const tb = document.createElement("tbody");
+  for (const r of rows) {
+    const row = document.createElement("tr");
+    r.forEach((c, i) => { const td = document.createElement("td"); td.textContent = typeof c === "number" ? fmt(c) : c; if (numCols.includes(i)) td.className = "num"; row.appendChild(td); });
+    tb.appendChild(row);
+  }
+  t.appendChild(tb);
+}
+
+function drawFunnel() {
+  const host = document.getElementById("funnel"); host.replaceChildren();
+  const W = host.clientWidth, rows = DATA.funnel, barH = 22, gap = 16;
+  const labelW = Math.min(230, W * 0.42), valueW = 56, plotW = W - labelW - valueW;
+  const H = rows.length * (barH + gap);
+  const svg = el("svg", { width: W, height: H, role: "img", "aria-label": "Curation funnel" }, host);
+  const max = rows[0].value;
+  el("line", { x1: labelW, x2: labelW, y1: 0, y2: H - gap / 2, stroke: "var(--axis)" }, svg);
+  rows.forEach((r, i) => {
+    const y = i * (barH + gap) + gap / 2, w = plotW * r.value / max;
+    const g = el("g", {}, svg);
+    text(g, labelW - 10, y + barH / 2 + 4, r.stage, "lbl", "end");
+    el("path", { d: barPathH(labelW, y, w, barH), fill: "var(--series-1)", class: "mark" }, g);
+    text(g, labelW + w + 8, y + barH / 2 + 4, fmt(r.value), "val");
+    el("rect", { x: 0, y: y - gap / 2, width: W, height: barH + gap, class: "hit" }, g);
+    const kept = i === 0 ? "starting pool" : `${(100 * r.value / max).toFixed(1)}% of starting pool`;
+    hoverable(g, () => [{ value: fmt(r.value), label: r.stage }, { value: kept, label: "" }]);
+  });
+  fillTable("drops", ["Phase", "Removed because", "Records"], DATA.drops, [2]);
+}
+
+function drawHist() {
+  const host = document.getElementById("hist"); host.replaceChildren();
+  const W = host.clientWidth, H = 240, m = { l: 48, r: 8, t: 12, b: 36 };
+  const bins = DATA.hist, pw = W - m.l - m.r, ph = H - m.t - m.b;
+  const max = Math.max(...bins.map(b => b.count)), ticks = niceTicks(max);
+  const top = ticks[ticks.length - 1], slot = pw / bins.length, bw = Math.min(24, slot - 2);
+  const svg = el("svg", { width: W, height: H, role: "img", "aria-label": "Sequence length histogram" }, host);
+  for (const t of ticks) {
+    const y = m.t + ph - ph * t / top;
+    el("line", { x1: m.l, x2: W - m.r, y1: y, y2: y, stroke: t === 0 ? "var(--axis)" : "var(--grid)" }, svg);
+    text(svg, m.l - 8, y + 4, fmt(t), "", "end");
+  }
+  bins.forEach((b, i) => {
+    const x = m.l + i * slot + (slot - bw) / 2, h = ph * b.count / top, y0 = m.t + ph;
+    const g = el("g", {}, svg);
+    if (b.count) el("path", { d: barPathV(x, y0, bw, h), fill: "var(--series-1)", class: "mark" }, g);
+    el("rect", { x: m.l + i * slot, y: m.t, width: slot, height: ph, class: "hit" }, g);
+    if (i % 2 === 0) text(svg, m.l + i * slot, H - m.b + 16, fmt(b.lo), "", "middle");
+    hoverable(g, () => [{ value: fmt(b.count), label: `examples with ${fmt(b.lo)}–${fmt(b.hi - 1)} tokens` }]);
+  });
+  text(svg, m.l + pw, H - m.b + 16, fmt(DATA.maxSeq), "", "end");
+  text(svg, m.l + pw / 2, H - 4, "tokens per example", "", "middle");
+  fillTable("hist-table", ["Tokens", "Examples"], bins.map(b => [`${fmt(b.lo)}–${fmt(b.hi - 1)}`, b.count]), [1]);
+}
+
+const SHORT = { "similarity": "Similarity only", "similarity+same_answer": "+ same answer",
+  "similarity+same_answer+same_args": "+ same answer + same inputs" };
+const COLORS = ["var(--series-1)", "var(--series-2)", "var(--series-3)"];
+
+function drawDedup() {
+  const d = DATA.dedup, host = document.getElementById("dedup"); host.replaceChildren();
+  const W = host.clientWidth, H = 280, m = { l: 40, r: W < 560 ? 16 : 200, t: 12, b: 40 };
+  const pw = W - m.l - m.r, ph = H - m.t - m.b;
+  const xs = d.series[0].points.map(p => p.x), x0 = Math.min(...xs), x1 = Math.max(...xs);
+  const X = x => m.l + pw * (x - x0) / (x1 - x0), Y = y => m.t + ph - ph * y;
+  const svg = el("svg", { width: W, height: H, role: "img", "aria-label": "F1 by threshold for three duplicate rules" }, host);
+  for (const t of [0, 0.25, 0.5, 0.75, 1]) {
+    el("line", { x1: m.l, x2: m.l + pw, y1: Y(t), y2: Y(t), stroke: t === 0 ? "var(--axis)" : "var(--grid)" }, svg);
+    text(svg, m.l - 8, Y(t) + 4, t.toFixed(2), "", "end");
+  }
+  xs.forEach(x => text(svg, X(x), H - m.b + 16, x.toFixed(2), "", "middle"));
+  text(svg, m.l + pw / 2, H - 4, "cosine similarity threshold", "", "middle");
+  const cross = el("line", { y1: m.t, y2: m.t + ph, stroke: "var(--axis)", visibility: "hidden" }, svg);
+  const ends = [];
+  d.series.forEach((s, i) => {
+    const pts = s.points.map(p => `${X(p.x)},${Y(p.y)}`).join(" ");
+    el("polyline", { points: pts, fill: "none", stroke: COLORS[i], "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+    const last = s.points[s.points.length - 1];
+    ends.push({ y: Y(last.y), x: X(last.x), name: SHORT[s.name] || s.name, color: COLORS[i] });
+  });
+  // Mark the chosen operating point.
+  const cs = d.series.find(s => s.name === d.chosen.rule), cp = cs.points.find(p => p.x === d.chosen.threshold);
+  el("circle", { cx: X(cp.x), cy: Y(cp.y), r: 5, fill: COLORS[d.series.indexOf(cs)], stroke: "var(--surface-1)", "stroke-width": 2 }, svg);
+  text(svg, X(cp.x) + 8, Y(cp.y) - 10, `chosen: F1 ${cp.y.toFixed(3)}`, "val");
+  // Direct end labels only where they don't collide; the legend always carries identity.
+  if (m.r > 150) {
+    ends.sort((a, b) => a.y - b.y).forEach((e, i, arr) => {
+      if (i > 0 && e.y - arr[i - 1].y < 14) return;
+      text(svg, e.x + 8, e.y + 4, e.name, "lbl");
+    });
+  }
+  const hit = el("rect", { x: m.l, y: m.t, width: pw, height: ph, class: "hit", tabindex: 0 }, svg);
+  let focusIdx = 0;
+  const show = (evt, idx) => {
+    const x = xs[idx];
+    cross.setAttribute("x1", X(x)); cross.setAttribute("x2", X(x)); cross.setAttribute("visibility", "visible");
+    showTip(evt, [{ value: `threshold ${x.toFixed(2)}`, label: "" },
+      ...d.series.map((s, i) => { const p = s.points[idx]; return { color: COLORS[i], value: `F1 ${p.y.toFixed(3)}`, label: `${SHORT[s.name]} (P ${p.p.toFixed(2)}, R ${p.r.toFixed(2)})` }; })]);
+  };
+  hit.addEventListener("pointermove", e => {
+    const bx = svg.getBoundingClientRect().left, px = e.clientX - bx;
+    let best = 0; xs.forEach((x, i) => { if (Math.abs(X(x) - px) < Math.abs(X(xs[best]) - px)) best = i; });
+    focusIdx = best; show(e, best);
+  });
+  hit.addEventListener("pointerleave", () => { cross.setAttribute("visibility", "hidden"); hideTip(); });
+  hit.addEventListener("focus", e => show(e, focusIdx));
+  hit.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") focusIdx = Math.min(xs.length - 1, focusIdx + 1);
+    else if (e.key === "ArrowLeft") focusIdx = Math.max(0, focusIdx - 1); else return;
+    e.preventDefault(); show(e, focusIdx);
+  });
+  hit.addEventListener("blur", () => { cross.setAttribute("visibility", "hidden"); hideTip(); });
+
+  const legend = document.getElementById("dedup-legend"); legend.replaceChildren();
+  d.series.forEach((s, i) => {
+    const sp = document.createElement("span"), key = document.createElement("i");
+    key.style.background = COLORS[i]; sp.appendChild(key); sp.appendChild(document.createTextNode(SHORT[s.name] || s.name));
+    legend.appendChild(sp);
+  });
+  document.getElementById("dedup-note").textContent =
+    `F1 for each duplicate rule, estimated on ${d.labeled} labeled neighbor pairs (${d.positives} duplicates), weighted to the full candidate population. `
+    + `Chosen: ${SHORT[d.chosen.rule]} at ${d.chosen.threshold}. Labels: ${d.annotator}.`;
+  fillTable("dedup-table", ["Rule", "Threshold", "Precision", "Recall", "F1"],
+    d.series.flatMap(s => s.points.map(p => [SHORT[s.name], p.x.toFixed(2), p.p.toFixed(3), p.r.toFixed(3), p.y.toFixed(3)])), [1, 2, 3, 4]);
+}
+
+function drawStatic() {
+  document.getElementById("gen").textContent = DATA.generated;
+  document.getElementById("maxseq").textContent = fmt(DATA.maxSeq);
+  const tiles = document.getElementById("tiles"); tiles.replaceChildren();
+  for (const [label, value] of DATA.tiles) {
+    const t = document.createElement("div"); t.className = "tile";
+    const l = document.createElement("div"); l.className = "label"; l.textContent = label;
+    const v = document.createElement("div"); v.className = "value"; v.textContent = fmt(value);
+    t.append(l, v); tiles.appendChild(t);
+  }
+  fillTable("splits", ["Split", "Examples", "Filings", "Companies", "Median tokens", "Max tokens", "1-step", "2-step", "3+ step", "Yes/no"],
+    DATA.splits, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const ov = Object.values(DATA.overlap).reduce((a, b) => a + b, 0);
+  document.getElementById("split-note").textContent =
+    `Split by company-year filing: ${ov} filings are shared between SFT train, SFT validation and ORPO prompts. `
+    + `ORPO prompts are held out of SFT so the SFT model makes genuine mistakes on them. `
+    + `Test is the official FinQA test set; ${fmt(DATA.testConsistent)} of its records have labels that pass the Phase 2 consistency check.`;
+  fillTable("rules", ["Rule", "Applications"], DATA.rules, [1]);
+}
+
+function drawAll() { drawFunnel(); drawHist(); drawDedup(); }
+drawStatic(); drawAll();
+let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawAll, 120); });
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "run_id": "phase4_quality-20260927-085949-aa9c95",
+  "phase": "phase4_quality",
+  "config": {
+    "low_length_ratio_reported_below": 0.5,
+    "drop_rules": [
+      "truncated_question",
+      "question_year_mismatch"
+    ]
+  },
+  "metrics": {
+    "pool_in": 6072,
+    "dropped_truncated_question": 8,
+    "dropped_question_year_mismatch": 39,
+    "pool_out": 6025
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "run_id": "phase5_splits-20260927-085949-f63b46",
+  "phase": "phase5_splits",
+  "config": {
+    "seed": 20260927,
+    "group": "company-year",
+    "val": 300,
+    "pref": 1200
+  },
+  "metrics": {
+    "sft_val": 305,
+    "pref_prompts": 1212,
+    "sft_train": 4508,
+    "test": 1147,
+    "filing_overlap": {
+      "sft_train&sft_val": 0,
+      "sft_train&pref_prompts": 0,
+      "sft_val&pref_prompts": 0
+    }
+  }
+}

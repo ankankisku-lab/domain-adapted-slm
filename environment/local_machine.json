@@ -1,0 +1,9 @@
+{
+  "role": "edge deployment target (llama.cpp inference only; no training)",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "vram_gb": 4.0,
+  "driver": "555.99",
+  "cpu": "12th Gen Intel Core i5-12450H (8 cores / 12 threads)",
+  "ram_gb": 15.7,
+  "os": "Windows 11 Home 10.0.22631"
+}

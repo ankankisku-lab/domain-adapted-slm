@@ -1,0 +1,75 @@
+{
+  "seed": 20260927,
+  "splits": {
+    "sft_val": {
+      "examples": 305,
+      "filings": 32,
+      "companies": 28,
+      "seq_tokens_median": 996,
+      "seq_tokens_max": 1616,
+      "over_max_seq_len": 0,
+      "program_steps": {
+        "1": 211,
+        "2": 80,
+        "3": 13,
+        "5": 1
+      },
+      "yes_no": 14
+    },
+    "pref_prompts": {
+      "examples": 1212,
+      "filings": 156,
+      "companies": 86,
+      "seq_tokens_median": 976,
+      "seq_tokens_max": 1834,
+      "over_max_seq_len": 0,
+      "program_steps": {
+        "1": 770,
+        "2": 362,
+        "3": 55,
+        "4": 10,
+        "5": 15
+      },
+      "yes_no": 30
+    },
+    "sft_train": {
+      "examples": 4508,
+      "filings": 566,
+      "companies": 135,
+      "seq_tokens_median": 951,
+      "seq_tokens_max": 1830,
+      "over_max_seq_len": 0,
+      "program_steps": {
+        "1": 2679,
+        "2": 1497,
+        "3": 232,
+        "4": 38,
+        "5": 60,
+        "6": 2
+      },
+      "yes_no": 78
+    },
+    "test": {
+      "examples": 1147,
+      "filings": 278,
+      "companies": 100,
+      "seq_tokens_median": 955,
+      "seq_tokens_max": 1976,
+      "over_max_seq_len": 0,
+      "program_steps": {
+        "1": 654,
+        "2": 409,
+        "3": 55,
+        "4": 10,
+        "5": 19
+      },
+      "yes_no": 20,
+      "label_consistent": 1045
+    }
+  },
+  "filing_overlap": {
+    "sft_train&sft_val": 0,
+    "sft_train&pref_prompts": 0,
+    "sft_val&pref_prompts": 0
+  }
+}
